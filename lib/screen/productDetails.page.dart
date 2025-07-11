@@ -16,7 +16,12 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back_ios, size: 20.sp),
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Icon(Icons.arrow_back_ios, size: 20.sp),
+        ),
         title: Text(
           'Nike White Sneakers...',
           style: GoogleFonts.inter(

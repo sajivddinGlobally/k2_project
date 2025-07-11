@@ -272,10 +272,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             SizedBox(height: 15.h),
-            Padding(
-              padding: EdgeInsets.only(left: 20.w),
-              child: ProductBody(),
-            ),
+            ProductBody(),
             Container(
               margin: EdgeInsets.only(top: 30.h),
               //color: Colors.amberAccent,
@@ -286,7 +283,7 @@ class _HomePageState extends State<HomePage> {
                 itemCount: weekendList.length,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: EdgeInsets.only(right: 10.w),
+                    padding: EdgeInsets.only(left: 10.w),
                     child: Stack(
                       children: [
                         ClipRRect(
@@ -328,12 +325,9 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
             ),
+
             SizedBox(height: 15.h),
-            SizedBox(height: 15.h),
-            Padding(
-              padding: EdgeInsets.only(left: 20.w),
-              child: ProductBody(),
-            ),
+            ProductBody(),
             Container(
               width: MediaQuery.of(context).size.width,
               height: 556.h,
@@ -399,14 +393,26 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  // SizedBox(height: 15.h),
-                  // Padding(
-                  //   padding: EdgeInsets.only(left: 20.w, right: 20.w),
-                  //   child: Row(
-                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //     children: [clothes("T-Shirt", "assets/c1.png")],
-                  //   ),
-                  // ),
+                  SizedBox(height: 15.h),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 20.w),
+                      child: Row(
+                        children: [
+                          clothes("T-Shirt", "assets/c1.png"),
+                          SizedBox(width: 15.w),
+                          clothes("Shorts", "assets/c2.png"),
+                          SizedBox(width: 15.w),
+                          clothes("Shirts", "assets/c3.png"),
+                          SizedBox(width: 15.w),
+                          clothes("Jeans", "assets/c4.png"),
+                          SizedBox(width: 15.w),
+                          clothes("Cargo", "assets/c5.png"),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -565,13 +571,13 @@ class _HomePageState extends State<HomePage> {
     return Column(
       children: [
         Container(
-          width: 70.w,
-          height: 70.h,
+          width: 80.w,
+          height: 80.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15.r),
             color: Colors.grey,
           ),
-          child: Image.asset(image),
+          child: Image.asset(image, fit: BoxFit.cover),
         ),
         SizedBox(height: 8.h),
         Text(
@@ -629,7 +635,7 @@ class _ProductBodyState extends State<ProductBody> {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Padding(
-            padding: EdgeInsets.only(right: 18.w),
+            padding: EdgeInsets.only(left: 18.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
