@@ -272,7 +272,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             SizedBox(height: 15.h),
-            ProductBody(),
+            const ProductBody(),
             Container(
               margin: EdgeInsets.only(top: 30.h),
               //color: Colors.amberAccent,
@@ -325,12 +325,11 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
             ),
-
             SizedBox(height: 15.h),
-            ProductBody(),
+            const ProductBody(),
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 556.h,
+              height: 656.h,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
@@ -344,53 +343,58 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    margin: EdgeInsets.only(top: 50.h),
-                    width: 400.w,
-                    height: 111.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.r),
-                      color: Color(0xff00D0B8),
-                    ),
-                    child: Stack(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(
-                            left: 20.w,
-                            top: 10.h,
-                            bottom: 10.h,
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "20% Off on Summer\nSuper sale",
-                                style: GoogleFonts.inter(
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w700,
-                                  color: Color(0xff010311),
-                                  letterSpacing: -1,
+                  Center(
+                    child: Container(
+                      margin: EdgeInsets.only(top: 50.h),
+                      width: 400.w,
+                      height: 111.h,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.r),
+                        color: Color(0xff00D0B8),
+                      ),
+                      child: Stack(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                              left: 20.w,
+                              top: 10.h,
+                              bottom: 10.h,
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "20% Off on Summer\nSuper sale",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: Color(0xff010311),
+                                    letterSpacing: -1,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                "Get Huge Discount on Summer\noutfits",
-                                style: GoogleFonts.inter(
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w500,
-                                  color: Color(0xff010311),
-                                  letterSpacing: -1,
+                                Text(
+                                  "Get Huge Discount on Summer\noutfits",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w500,
+                                    color: Color(0xff010311),
+                                    letterSpacing: -1,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Image.asset("assets/tree.png", height: 111.h),
-                        ),
-                      ],
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: Image.asset(
+                              "assets/tree.png",
+                              height: 111.h,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(height: 15.h),
@@ -411,6 +415,103 @@ class _HomePageState extends State<HomePage> {
                           clothes("Cargo", "assets/c5.png"),
                         ],
                       ),
+                    ),
+                  ),
+                  SizedBox(height: 15.h),
+                  SizedBox(
+                    height: 160.h,
+                    child: ListView.builder(
+                      itemCount: 4,
+                      scrollDirection: Axis.horizontal,
+                      padding: EdgeInsets.only(left: 20.w),
+                      itemBuilder: (context, index) {
+                        return Container(
+                          margin: EdgeInsets.only(right: 20.w),
+                          width: 130.w,
+                          height: 160.h,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15.r),
+                            color: Colors.white,
+                          ),
+                          child: Column(
+                            children: [
+                              Stack(
+                                children: [
+                                  Align(
+                                    alignment: Alignment.topCenter,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(3),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(
+                                          15.r,
+                                        ),
+                                        child: Image.asset(
+                                          "assets/boys.png",
+                                          width: 122.w,
+                                          height: 114.h,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(3),
+                                    child: Container(
+                                      width: 122.w,
+                                      height: 114.h,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(
+                                          15.r,
+                                        ),
+                                        gradient: LinearGradient(
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                          colors: [
+                                            Color.fromARGB(0, 1, 3, 17),
+                                            Color.fromARGB(178, 1, 3, 17),
+                                          ],
+                                        ),
+                                      ),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          Text(
+                                            "Min 20% off",
+                                            style: GoogleFonts.inter(
+                                              fontSize: 13.sp,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                          Text(
+                                            "Beach Shirt",
+                                            style: GoogleFonts.inter(
+                                              fontSize: 11.sp,
+                                              fontWeight: FontWeight.w400,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 6.h),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image.asset("assets/gap.png"),
+                                  SizedBox(width: 10.w),
+                                  Image.asset("assets/d.png"),
+                                ],
+                              ),
+                            ],
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ],
