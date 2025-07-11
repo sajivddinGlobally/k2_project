@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:k2_app/screen/productDetails.page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,6 +13,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int tab = 0;
+  int tabBottom = 0;
+  List<Map<String, dynamic>> weekendList = [
+    {"imageUrl": "assets/w1.png"},
+    {"imageUrl": "assets/w2.png"},
+    {"imageUrl": "assets/w3.png"},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -268,6 +276,259 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(left: 20.w),
               child: ProductBody(),
             ),
+            Container(
+              margin: EdgeInsets.only(top: 30.h),
+              //color: Colors.amberAccent,
+              height: 180.h,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.zero,
+                itemCount: weekendList.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: EdgeInsets.only(right: 10.w),
+                    child: Stack(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10.r),
+                          child: Image.asset(
+                            //"assets/w1.png",
+                            weekendList[index]["imageUrl"].toString(),
+                            width: 298.w,
+                            height: 166.h,
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 40.h,
+                          left: 20,
+                          child: Center(
+                            child: Container(
+                              width: 82.w,
+                              height: 28.h,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(7.r),
+                                color: Color(0xffFFFFFF),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "Shop now",
+                                  style: GoogleFonts.inter(
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w500,
+                                    color: Color(0xff0F1235),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+            SizedBox(height: 15.h),
+            SizedBox(height: 15.h),
+            Padding(
+              padding: EdgeInsets.only(left: 20.w),
+              child: ProductBody(),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 556.h,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color.fromARGB(0, 159, 255, 244),
+                    Color.fromARGB(255, 159, 255, 244),
+                    Color.fromARGB(255, 159, 255, 244),
+                    Color.fromARGB(0, 159, 255, 244),
+                  ],
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 50.h),
+                    width: 400.w,
+                    height: 111.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15.r),
+                      color: Color(0xff00D0B8),
+                    ),
+                    child: Stack(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 20.w,
+                            top: 10.h,
+                            bottom: 10.h,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "20% Off on Summer\nSuper sale",
+                                style: GoogleFonts.inter(
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: Color(0xff010311),
+                                  letterSpacing: -1,
+                                ),
+                              ),
+                              Text(
+                                "Get Huge Discount on Summer\noutfits",
+                                style: GoogleFonts.inter(
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: Color(0xff010311),
+                                  letterSpacing: -1,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Image.asset("assets/tree.png", height: 111.h),
+                        ),
+                      ],
+                    ),
+                  ),
+                  // SizedBox(height: 15.h),
+                  // Padding(
+                  //   padding: EdgeInsets.only(left: 20.w, right: 20.w),
+                  //   child: Row(
+                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //     children: [clothes("T-Shirt", "assets/c1.png")],
+                  //   ),
+                  // ),
+                ],
+              ),
+            ),
+            SizedBox(height: 40.h),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xff4A3DFE),
+        elevation: 6,
+        shape: CircleBorder(
+          side: BorderSide(color: Colors.white, width: 0.93.w),
+        ),
+        onPressed: () {},
+        child: Icon(Icons.shopping_bag, color: Colors.white),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        height: 80.h,
+        padding: EdgeInsets.zero,
+        shape: CircularNotchedRectangle(),
+        notchMargin: 6.0,
+        color: Colors.white,
+        elevation: 20,
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                offset: Offset(0, -6),
+                blurRadius: 40,
+                spreadRadius: 0,
+                color: Color.fromARGB(63, 0, 0, 0),
+              ),
+            ],
+          ),
+          child: Padding(
+            padding: EdgeInsets.zero,
+            child: Row(
+              children: [
+                Expanded(
+                  child: _buildTab(
+                    icon: Icons.home_filled,
+                    label: "Home",
+                    index: 0,
+                  ),
+                ),
+                Expanded(
+                  child: _buildTab(
+                    icon: Icons.wallet,
+                    label: "Wallet",
+                    index: 1,
+                  ),
+                ),
+                SizedBox(width: 24.w),
+                Expanded(
+                  child: _buildTab(
+                    icon: Icons.message,
+                    label: "Chat",
+                    index: 2,
+                  ),
+                ),
+                Expanded(
+                  child: _buildTab(
+                    icon: Icons.grid_view_rounded,
+                    label: "Category",
+                    index: 3,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTab({
+    required IconData icon,
+    required String label,
+    required int index,
+  }) {
+    final isSelected = tabBottom == index;
+    return Container(
+      height: 78.h,
+      decoration: BoxDecoration(
+        color: isSelected
+            ? Color(0xffF3F3FF)
+            : Colors.white, // 👈 Background change
+        border: Border(
+          top: BorderSide(
+            color: isSelected ? Color(0xff4A3DFE) : Colors.transparent,
+            width: 4.w,
+          ),
+        ),
+      ),
+      child: MaterialButton(
+        onPressed: () {
+          setState(() {
+            tabBottom = index;
+          });
+        },
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              icon,
+              color: isSelected
+                  ? const Color(0xff4A3DFE)
+                  : const Color(0xff606480),
+              size: 26.sp,
+            ),
+            Text(
+              label,
+              style: GoogleFonts.inter(
+                color: isSelected
+                    ? const Color(0xff4A3DFE)
+                    : const Color(0xff606480),
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
           ],
         ),
       ),
@@ -297,6 +558,32 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget clothes(String name, String image) {
+    return Column(
+      children: [
+        Container(
+          width: 70.w,
+          height: 70.h,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15.r),
+            color: Colors.grey,
+          ),
+          child: Image.asset(image),
+        ),
+        SizedBox(height: 8.h),
+        Text(
+          // "T-shirts",
+          name,
+          style: GoogleFonts.inter(
+            fontSize: 12.sp,
+            fontWeight: FontWeight.w500,
+            color: Color(0xff010311),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -348,17 +635,27 @@ class _ProductBodyState extends State<ProductBody> {
               children: [
                 Stack(
                   children: [
-                    Container(
-                      width: 110.w,
-                      height: 120.h,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10.r),
-                        child: Image.asset(
-                         // "assets/camera.png",
-                         productList[index]["imageUrl"].toString(),
-                          width: 110.w,
-                          height: 120.h,
-                          fit: BoxFit.cover,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) => ProductDetailPage(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        width: 110.w,
+                        height: 120.h,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10.r),
+                          child: Image.asset(
+                            // "assets/camera.png",
+                            productList[index]["imageUrl"].toString(),
+                            width: 110.w,
+                            height: 120.h,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     ),
