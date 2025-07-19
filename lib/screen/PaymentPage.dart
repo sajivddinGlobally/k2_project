@@ -14,7 +14,7 @@ class PaymentPage extends StatefulWidget {
 }
 
 class _PaymentPageState extends State<PaymentPage> {
-  int _selectedIndex = -1; // -1 means no container is selected
+  // int _selectedIndex = -1; // -1 means no container is selected
   bool isChecked = false;
   @override
   Widget build(BuildContext context) {
@@ -309,40 +309,40 @@ class _PaymentPageState extends State<PaymentPage> {
     );
   }
 
-  Widget buildContainer(String text, int index) {
-    bool isSelected = _selectedIndex == index;
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          _selectedIndex = index; // Update selected index
-        });
-      },
-      child: Container(
-        height: 50.h,
-        width: 70.w,
-        decoration: BoxDecoration(
-          color: isSelected ? Color(0xff4A3DFE) : Colors.white,
-          borderRadius: BorderRadius.circular(30.sp),
-          border: Border.all(
-            color: isSelected
-                ? Color(0xff4A3DFE)
-                : Colors.grey, // Optional: border for unselected
-            width: 1,
-          ),
-        ),
-        child: Center(
-          child: Text(
-            text,
-            style: GoogleFonts.inter(
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w400,
-              color: isSelected
-                  ? Colors.white
-                  : Colors.black, // Text color changes based on selection
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+  // Widget buildContainer(String text, int index) {
+  //   bool isSelected = _selectedIndex == index;
+  //   return GestureDetector(
+  //     onTap: () {
+  //       setState(() {
+  //         _selectedIndex = index; // Update selected index
+  //       });
+  //     },
+  //     child: Container(
+  //       height: 50.h,
+  //       width: 70.w,
+  //       decoration: BoxDecoration(
+  //         color: isSelected ? Color(0xff4A3DFE) : Colors.white,
+  //         borderRadius: BorderRadius.circular(30.sp),
+  //         border: Border.all(
+  //           color: isSelected
+  //               ? Color(0xff4A3DFE)
+  //               : Colors.grey, // Optional: border for unselected
+  //           width: 1,
+  //         ),
+  //       ),
+  //       child: Center(
+  //         child: Text(
+  //           text,
+  //           style: GoogleFonts.inter(
+  //             fontSize: 14.sp,
+  //             fontWeight: FontWeight.w400,
+  //             color: isSelected
+  //                 ? Colors.white
+  //                 : Colors.black, // Text color changes based on selection
+  //           ),
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 }
