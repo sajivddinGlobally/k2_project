@@ -64,7 +64,6 @@ class _ZoomFadeImageAnimationState extends State<ZoomFadeImageAnimation>
         child: Stack(
           alignment: Alignment.center,
           children: [
-
             ScaleTransition(
               scale: _scaleAnimation,
               child: Image.asset(
@@ -74,7 +73,6 @@ class _ZoomFadeImageAnimationState extends State<ZoomFadeImageAnimation>
                 fit: BoxFit.fill,
               ),
             ),
-
             FadeTransition(
               opacity: _fadeAnimation,
               child: Image.asset(

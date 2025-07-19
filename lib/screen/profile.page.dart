@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:k2_app/screen/YourAddress.dart';
 import 'package:k2_app/screen/editProfile.page.dart';
 import 'package:k2_app/screen/help.page.dart';
 import 'package:k2_app/screen/language.page.dart';
 import 'package:k2_app/screen/notification.page.dart';
 import 'package:k2_app/screen/security.page.dart';
-
 import 'PaymentPage.dart';
 import 'ProfilePaymentPage.dart';
 
@@ -451,7 +451,12 @@ class _ProfilePageState extends State<ProfilePage> {
                     title: "Delivery Address",
                     subtitle: "Update your Address here",
                     color: Color(0xff211D38),
-                    callback: () {},
+                    callback: () {
+                      Navigator.push(
+                        context,
+                        CupertinoPageRoute(builder: (context) => YourAddress()),
+                      );
+                    },
                   ),
                   SizedBox(height: 10.h),
                   ProBody(
@@ -462,7 +467,9 @@ class _ProfilePageState extends State<ProfilePage> {
                     callback: () {
                       Navigator.push(
                         context,
-                        CupertinoPageRoute(builder: (context) => ProfilePaymentPage()),
+                        CupertinoPageRoute(
+                          builder: (context) => ProfilePaymentPage(),
+                        ),
                       );
                     },
                   ),

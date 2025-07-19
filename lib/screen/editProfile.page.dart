@@ -1,7 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});
@@ -14,6 +18,61 @@ class _EditProfilePageState extends State<EditProfilePage> {
   final nameController = TextEditingController();
   final phoneController = TextEditingController();
   final emailController = TextEditingController();
+
+  File? image;
+  final picker = ImagePicker();
+
+  Future pickImageFromGallery() async {
+    var status = await Permission.camera.request();
+    if (status.isGranted) {
+      final PickedFile = await picker.pickImage(source: ImageSource.gallery);
+      if (PickedFile != null) {
+        setState(() {
+          image = File(PickedFile.path);
+        });
+      }
+    } else {
+      print("Gallery Permission isDenied");
+    }
+  }
+
+  Future pickImageFromCamera() async {
+    var status = await Permission.camera.request();
+    if (status.isGranted) {
+      final PickedFile = await picker.pickImage(source: ImageSource.camera);
+      if (PickedFile != null) {
+        setState(() {
+          image = File(PickedFile.path);
+        });
+      }
+    } else {
+      print("Camera Permission isDenied");
+    }
+  }
+
+  Future showImage() async {
+    showCupertinoModalPopup(
+      context: context,
+      builder: (context) => CupertinoActionSheet(
+        actions: [
+          CupertinoActionSheetAction(
+            onPressed: () {
+              Navigator.pop(context);
+              pickImageFromGallery();
+            },
+            child: Text("Gallery"),
+          ),
+          CupertinoActionSheetAction(
+            onPressed: () {
+              Navigator.pop(context);
+              pickImageFromCamera();
+            },
+            child: Text("Camera"),
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +137,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
             Padding(
               padding: EdgeInsets.only(left: 20.w, right: 20.w),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  showImage();
+                },
                 child: Container(
                   width: 400.w,
                   height: 122.h,
@@ -86,21 +147,23 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     borderRadius: BorderRadius.circular(10.r),
                     border: Border.all(color: Color(0xffE6E8F2), width: 1.w),
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.file_upload_outlined, size: 24.sp),
-                      Text(
-                        "Upload Image",
-                        style: GoogleFonts.inter(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xff010311),
-                        ),
-                      ),
-                    ],
-                  ),
+                  child: image == null
+                      ? Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.file_upload_outlined, size: 24.sp),
+                            Text(
+                              "Upload Image",
+                              style: GoogleFonts.inter(
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xff010311),
+                              ),
+                            ),
+                          ],
+                        )
+                      : Image.file(image!, fit: BoxFit.cover),
                 ),
               ),
             ),
