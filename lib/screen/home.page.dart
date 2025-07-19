@@ -180,7 +180,6 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                 ),
-
                                 Spacer(),
                                 Container(
                                   width: 36.w,
@@ -198,7 +197,6 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                                 SizedBox(width: 10.w),
-
                                 InkWell(
                                   onTap: () {
                                     Navigator.push(
@@ -1798,7 +1796,8 @@ class ProductBody extends StatelessWidget {
                 ),
                 SizedBox(height: 8.h),
                 Text(
-                  "\$150.00",
+                  //"\$150.00",
+                  productList[index]['price'].toString(),
                   style: GoogleFonts.inter(
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w500,

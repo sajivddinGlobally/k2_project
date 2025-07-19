@@ -70,132 +70,135 @@ class WishListPage extends StatelessWidget {
           SizedBox(width: 20.w),
         ],
       ),
-      body: Column(
-        children: [
-          // Expanded(child:
-          GridView.count(
-            shrinkWrap: true,
-            crossAxisCount: 3, // Number of columns
-            crossAxisSpacing: 10.w, // Spacing between columns
-            mainAxisSpacing: 10.h, // Spacing between rows
-            padding: EdgeInsets.all(10.sp), // Padding around the grid
-            childAspectRatio: 0.55, // Adjust to make room for image and text
-            children: List.generate(
-              9, // Number of items
-              (index) => Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Stack(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(left: 10.w, right: 10.w),
-                        decoration: BoxDecoration(
-                          // border: Border.all(color: Colors.blueAccent, width: 2),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(
-                            10.r,
-                          ), // 10px border radius
-                          child: Image.asset(
-                            imagePaths[index %
-                                imagePaths.length], // Cycle through images
-                            fit: BoxFit.cover, // Ensure image fills the tile
-                            width: double.infinity, // Full width of the tile
-                            height: 150.h, // Fixed height for consistency
-                            errorBuilder: (context, error, stackTrace) {
-                              return Center(
-                                child: Text(
-                                  'Error loading\nItem $index',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    color: Colors.red,
-                                    fontSize: 16.sp,
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        right: 20,
-                        bottom: 10,
-                        child: Container(
-                          width: 28.w,
-                          height: 28.h,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            // Expanded(child:
+            GridView.count(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              crossAxisCount: 3, // Number of columns
+              crossAxisSpacing: 10.h, // Spacing between columns
+              mainAxisSpacing: 10.w, // Spacing between rows
+              padding: EdgeInsets.all(10.sp), // Padding around the grid
+              childAspectRatio: 0.50, // Adjust to make room for image and text
+              children: List.generate(
+                9, // Number of items
+                (index) => Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Stack(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(left: 10.w, right: 10.w),
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(6.r),
-                            color: Color(0xff4A3DFE),
+                            // border: Border.all(color: Colors.blueAccent, width: 2),
                           ),
-                          child: Icon(Icons.add, color: Colors.white),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 8.h),
-                  // Spacing between image and text
-                  Container(
-                    margin: EdgeInsets.only(left: 10.w, right: 10.w),
-                    child: Text(
-                      categoryNames[index %
-                          categoryNames.length], // Cycle through categories
-                      style: GoogleFonts.inter(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.grey,
-                      ),
-                      textAlign: TextAlign.start,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                  SizedBox(height: 4.h),
-                  // Spacing between category and product count
-                  Container(
-                    margin: EdgeInsets.only(left: 10.w, right: 10.w),
-                    child: Text(
-                      '\$150.00', // Placeholder product count
-                      style: GoogleFonts.inter(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.black,
-                      ),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-                  SizedBox(height: 10.h),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        CupertinoPageRoute(builder: (context) => CartPage()),
-                      );
-                    },
-                    child: Container(
-                      height: 40.h,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: Color(0xff4A3DFE)),
-                      ),
-                      child: Center(
-                        child: Text(
-                          "Move to cart",
-                          style: GoogleFonts.inter(
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xff4A3DFE),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(
+                              10.r,
+                            ), // 10px border radius
+                            child: Image.asset(
+                              imagePaths[index %
+                                  imagePaths.length], // Cycle through images
+                              fit: BoxFit.cover, // Ensure image fills the tile
+                              width: double.infinity, // Full width of the tile
+                              height: 150.h, // Fixed height for consistency
+                              errorBuilder: (context, error, stackTrace) {
+                                return Center(
+                                  child: Text(
+                                    'Error loading\nItem $index',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.red,
+                                      fontSize: 16.sp,
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
                           ),
                         ),
+                        Positioned(
+                          right: 20,
+                          bottom: 10,
+                          child: Container(
+                            width: 28.w,
+                            height: 28.h,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(6.r),
+                              color: Color(0xff4A3DFE),
+                            ),
+                            child: Icon(Icons.add, color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 8.h),
+                    // Spacing between image and text
+                    Container(
+                      margin: EdgeInsets.only(left: 10.w, right: 10.w),
+                      child: Text(
+                        categoryNames[index %
+                            categoryNames.length], // Cycle through categories
+                        style: GoogleFonts.inter(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.grey,
+                        ),
+                        textAlign: TextAlign.start,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                  ),
-                ],
+                    SizedBox(height: 4.h),
+                    // Spacing between category and product count
+                    Container(
+                      margin: EdgeInsets.only(left: 10.w, right: 10.w),
+                      child: Text(
+                        '\$150.00', // Placeholder product count
+                        style: GoogleFonts.inter(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.black,
+                        ),
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                    SizedBox(height: 10.h),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          CupertinoPageRoute(builder: (context) => CartPage()),
+                        );
+                      },
+                      child: Container(
+                        height: 40.h,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: Color(0xff4A3DFE)),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Move to cart",
+                            style: GoogleFonts.inter(
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff4A3DFE),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
