@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:k2_app/screen/CartPage.dart';
+import 'package:k2_app/screen/productDetails.page.dart';
 
 class SearchResultPage extends StatefulWidget {
   const SearchResultPage({super.key});
@@ -78,7 +79,7 @@ class _SearchResultPageState extends State<SearchResultPage> {
                     SizedBox(
                       height: 20.h,
                     ), // Space between back row and textfield
-                    // TextField inside the card
+                    //  TextField inside the card
                     TextField(
                       cursorColor: Colors.black,
                       style: GoogleFonts.inter(color: Colors.black),
@@ -110,7 +111,6 @@ class _SearchResultPageState extends State<SearchResultPage> {
                 ),
               ),
             ),
-
             Expanded(
               child: GridView.count(
                 scrollDirection: Axis.vertical,
@@ -129,59 +129,60 @@ class _SearchResultPageState extends State<SearchResultPage> {
                     children: [
                       Stack(
                         children: [
-                          Container(
-                            margin: EdgeInsets.only(left: 10.w, right: 10.w),
-                            decoration: BoxDecoration(
-                              // border: Border.all(color: Colors.blueAccent, width: 2),
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(
-                                10.r,
-                              ), // 10px border radius
-                              child: Image.asset(
-                                imagePaths[index %
-                                    imagePaths.length], // Cycle through images
-                                fit:
-                                    BoxFit.cover, // Ensure image fills the tile
-                                width:
-                                    double.infinity, // Full width of the tile
-                                height: 150.h, // Fixed height for consistency
-                                errorBuilder: (context, error, stackTrace) {
-                                  return Center(
-                                    child: Text(
-                                      'Error loading\nItem $index',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.red,
-                                        fontSize: 16.sp,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                  builder: (context) => ProductDetailPage(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              margin: EdgeInsets.only(left: 10.w, right: 10.w),
+                              decoration: BoxDecoration(
+                                // border: Border.all(color: Colors.blueAccent, width: 2),
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(
+                                  10.r,
+                                ), // 10px border radius
+                                child: Image.asset(
+                                  imagePaths[index %
+                                      imagePaths
+                                          .length], // Cycle through images
+                                  fit: BoxFit
+                                      .cover, // Ensure image fills the tile
+                                  width:
+                                      double.infinity, // Full width of the tile
+                                  height: 150.h, // Fixed height for consistency
+                                  errorBuilder: (context, error, stackTrace) {
+                                    return Center(
+                                      child: Text(
+                                        'Error loading\nItem $index',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          color: Colors.red,
+                                          fontSize: 16.sp,
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                },
+                                    );
+                                  },
+                                ),
                               ),
                             ),
                           ),
                           Positioned(
                             right: 0,
                             bottom: 0,
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  CupertinoPageRoute(
-                                    builder: (context) => CartPage(),
-                                  ),
-                                );
-                              },
-                              child: Container(
-                                width: 28.w,
-                                height: 28.h,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(6.r),
-                                  color: Color(0xff4A3DFE),
-                                ),
-                                child: Icon(Icons.add, color: Colors.white),
+                            child: Container(
+                              width: 28.w,
+                              height: 28.h,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(6.r),
+                                color: Color(0xff4A3DFE),
                               ),
+                              child: Icon(Icons.add, color: Colors.white),
                             ),
                           ),
                         ],
