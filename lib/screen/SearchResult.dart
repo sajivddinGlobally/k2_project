@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:k2_app/screen/CartPage.dart';
 import 'package:k2_app/screen/productDetails.page.dart';
 
 class SearchResultPage extends StatefulWidget {
@@ -217,7 +216,6 @@ class _SearchResultPageState extends State<SearchResultPage> {
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
-
                       SizedBox(height: 4.h),
                       Container(
                         margin: EdgeInsets.only(left: 10.w, right: 10.w),
