@@ -130,6 +130,13 @@ class _HomePageState extends State<HomePage> {
 
     return WillPopScope(
       onWillPop: () async {
+        if (tabBottom != 0) {
+          // First navigate to Home tab
+          setState(() {
+            tabBottom = 0;
+          });
+          return false; // Don't exit app
+        }
         final now = DateTime.now();
         if (lastBackPressTime == null ||
             now.difference(lastBackPressTime!) > const Duration(seconds: 2)) {
