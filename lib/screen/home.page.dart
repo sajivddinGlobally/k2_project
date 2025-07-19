@@ -79,55 +79,6 @@ class _HomePageState extends State<HomePage> {
   DateTime? lastBackPressTime;
   @override
   Widget build(BuildContext context) {
-    /*
-    return WillPopScope(
-        onWillPop: () async {
-      if (bottomTab != 0) {
-        // _pageController.jumpToPage(0);
-        setState(() {
-          bottomTab = 0;
-          // _refreshJobList();
-        });
-        return false;
-      }
-      final now = DateTime.now();
-      if (lastBackPressTime == null ||
-          now.difference(lastBackPressTime!) > const Duration(seconds: 2)) {
-        lastBackPressTime = now;
-        Fluttertoast.showToast(
-          msg: "Press back again to exit",
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.BOTTOM,
-        );
-        return false;
-      }
-      return true;
-    },*/
-
-    /*  return WillPopScope(
-        onWillPop: () async {
-          if (bottomTab != 0) {
-            setState(() {
-              bottomTab = 0;
-            });
-            return false;
-          }
-          final now = DateTime.now();
-          if (lastBackPressTime == null ||
-              now.difference(lastBackPressTime!) > const Duration(seconds: 2)) {
-            lastBackPressTime = now;
-            Fluttertoast.showToast(
-              msg: "Press back again to exit",
-              toastLength: Toast.LENGTH_SHORT,
-              gravity: ToastGravity.BOTTOM,
-              backgroundColor: Colors.black54,
-              textColor: Colors.white,
-            );
-            return false;
-          }
-          return true; // App exit
-        },*/
-
     return WillPopScope(
       onWillPop: () async {
         if (tabBottom != 0) {
