@@ -163,7 +163,10 @@ class _EditProfilePageState extends State<EditProfilePage> {
                             ),
                           ],
                         )
-                      : Image.file(image!, fit: BoxFit.cover),
+                      : ClipRRect(
+                          borderRadius: BorderRadius.circular(10.r),
+                          child: Image.file(image!, fit: BoxFit.cover),
+                        ),
                 ),
               ),
             ),
