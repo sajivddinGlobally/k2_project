@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:k2_app/screen/wallet.page.dart';
-
 import 'OrderConfirmation.dart';
 
 class PaymentPage extends StatefulWidget {
