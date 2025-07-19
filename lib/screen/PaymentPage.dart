@@ -309,7 +309,7 @@ class _PaymentPageState extends State<PaymentPage> {
     );
   }
 
-  Widget _buildContainer(String text, int index) {
+  Widget buildContainer(String text, int index) {
     bool isSelected = _selectedIndex == index;
     return GestureDetector(
       onTap: () {
