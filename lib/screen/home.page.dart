@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
     },
   ];
   int bottomTab = 0;
-  final PageController _pageController = PageController();
+
   DateTime? lastBackPressTime;
   @override
   Widget build(BuildContext context) {
