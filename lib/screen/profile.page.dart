@@ -8,7 +8,7 @@ import 'package:k2_app/screen/help.page.dart';
 import 'package:k2_app/screen/language.page.dart';
 import 'package:k2_app/screen/notification.page.dart';
 import 'package:k2_app/screen/security.page.dart';
-import 'PaymentPage.dart';
+
 import 'ProfilePaymentPage.dart';
 
 class ProfilePage extends StatefulWidget {
