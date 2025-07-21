@@ -522,7 +522,7 @@ class _CartPageState extends State<CartPage> {
                       Container(
                         margin: EdgeInsets.only(left: 0),
                         padding: EdgeInsets.all(12.sp),
-                        height: 280
+                        height: 290
                             .h, // Increased height to accommodate both color and size
                         width: double.infinity,
                         decoration: BoxDecoration(
