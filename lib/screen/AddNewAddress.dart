@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:k2_app/screen/OrderConfirmation.dart';
 
-
 class AddNewAddress extends StatefulWidget {
   const AddNewAddress({super.key});
   @override
@@ -199,7 +198,6 @@ class _AddNewAddressState extends State<AddNewAddress> {
                       ),
                     ],
                   ),
-
                   SizedBox(height: 10.h),
                   Text(
                     "Select Address Type",
@@ -209,56 +207,6 @@ class _AddNewAddressState extends State<AddNewAddress> {
                       color: Color(0xff606480),
                     ),
                   ),
-
-                  /*  Row(children: [
-                      Container(
-                        child:
-                        Center(child:
-                        Text("Home",  style: GoogleFonts.inter(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w400,
-                            color:  Colors.white
-                        ),),),
-
-                        height: 50.h,
-                        width: 70,
-                        decoration: BoxDecoration(
-                            color:  Color(0xff4A3DFE),
-                            borderRadius: BorderRadius.circular(30.sp)),
-                      ),
-                      SizedBox(width: 10.w,),
-                      Container(
-                        child:
-                        Center(child:
-                        Text("Work",  style: GoogleFonts.inter(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w400,
-                            color:  Colors.white
-                        ),),),
-
-                        height: 50.h,
-                        width: 70,
-                        decoration: BoxDecoration(
-                            color:  Color(0xff4A3DFE),
-                            borderRadius: BorderRadius.circular(30.sp)),
-                      ),
-                      SizedBox(width: 10.w,),
-                      Container(
-                        child:
-                        Center(child:
-                        Text("Other",  style: GoogleFonts.inter(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w400,
-                            color:  Colors.white
-                        ),),),
-
-                        height: 50.h,
-                        width: 70,
-                        decoration: BoxDecoration(
-                            color:  Color(0xff4A3DFE),
-                            borderRadius: BorderRadius.circular(30.sp)),
-                      )
-                    ],)*/
                   SizedBox(height: 10.h),
                   Row(
                     children: [
@@ -273,7 +221,6 @@ class _AddNewAddressState extends State<AddNewAddress> {
               ),
             ),
             Expanded(child: SizedBox()),
-
             InkWell(
               onTap: () {
                 Navigator.pushAndRemoveUntil(
@@ -315,7 +262,6 @@ class _AddNewAddressState extends State<AddNewAddress> {
 
   Widget _buildContainer(String text, int index) {
     bool isSelected = _selectedIndex == index;
-
     return GestureDetector(
       onTap: () {
         setState(() {
