@@ -476,7 +476,7 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 30.h),
+                        margin: EdgeInsets.only(top: 20.h),
                         //color: Colors.amberAccent,
                         height: 180.h,
                         child: ListView.builder(
@@ -569,7 +569,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Container(
                         width: MediaQuery.of(context).size.width,
-                        height: 500.h,
+                        height: 480.h,
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             begin: Alignment.topCenter,
@@ -587,7 +587,7 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Center(
                               child: Container(
-                                margin: EdgeInsets.only(top: 50.h),
+                                margin: EdgeInsets.only(top: 30.h),
                                 width: 400.w,
                                 height: 111.h,
                                 decoration: BoxDecoration(
@@ -612,16 +612,16 @@ class _HomePageState extends State<HomePage> {
                                               fontSize: 16.sp,
                                               fontWeight: FontWeight.w700,
                                               color: Color(0xff010311),
-                                              letterSpacing: -1,
+                                              //letterSpacing: -1,
                                             ),
                                           ),
                                           Text(
                                             "Get Huge Discount on Summer\noutfits",
                                             style: GoogleFonts.inter(
-                                              fontSize: 12.sp,
+                                              fontSize: 14.sp,
                                               fontWeight: FontWeight.w500,
                                               color: Color(0xff010311),
-                                              letterSpacing: -1,
+                                              letterSpacing: -0.4,
                                             ),
                                           ),
                                         ],
@@ -734,7 +734,7 @@ class _HomePageState extends State<HomePage> {
                                                     Text(
                                                       "Min 20% off",
                                                       style: GoogleFonts.inter(
-                                                        fontSize: 13.sp,
+                                                        fontSize: 14.sp,
                                                         fontWeight:
                                                             FontWeight.w500,
                                                         color: Colors.white,
@@ -743,7 +743,7 @@ class _HomePageState extends State<HomePage> {
                                                     Text(
                                                       "Beach Shirt",
                                                       style: GoogleFonts.inter(
-                                                        fontSize: 11.sp,
+                                                        fontSize: 12.sp,
                                                         fontWeight:
                                                             FontWeight.w400,
                                                         color: Colors.white,
@@ -783,7 +783,7 @@ class _HomePageState extends State<HomePage> {
                           Text(
                             "Flash sale on Home Decor",
                             style: GoogleFonts.inter(
-                              fontSize: 16.sp,
+                              fontSize: 18.sp,
                               fontWeight: FontWeight.w500,
                               color: Color(0xff010311),
                               letterSpacing: -1,
@@ -793,12 +793,12 @@ class _HomePageState extends State<HomePage> {
                           Text(
                             "See All",
                             style: GoogleFonts.inter(
-                              fontSize: 11.sp,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w500,
                               color: Color(0xff211D38),
                             ),
                           ),
-                          Icon(Icons.arrow_forward_ios, size: 15.sp),
+                          Icon(Icons.arrow_forward_ios, size: 18.sp),
                           SizedBox(width: 20.w),
                         ],
                       ),
@@ -1712,7 +1712,7 @@ class _HomePageState extends State<HomePage> {
           // "T-shirts",
           name,
           style: GoogleFonts.inter(
-            fontSize: 12.sp,
+            fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: Color(0xff010311),
           ),
