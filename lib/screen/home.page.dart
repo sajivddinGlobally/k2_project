@@ -160,7 +160,7 @@ class _HomePageState extends State<HomePage> {
                                         Text(
                                           "Deliver at",
                                           style: GoogleFonts.inter(
-                                            fontSize: 14.sp,
+                                            fontSize: 16.sp,
                                             fontWeight: FontWeight.w500,
                                             color: Color(0xffFFFFFF),
                                             letterSpacing: -1,
@@ -169,7 +169,7 @@ class _HomePageState extends State<HomePage> {
                                         Text(
                                           "Banipark, Jaipur 302033",
                                           style: GoogleFonts.inter(
-                                            fontSize: 14.sp,
+                                            fontSize: 15.sp,
                                             fontWeight: FontWeight.w500,
                                             color: Colors.white60,
                                             letterSpacing: -1,
@@ -431,7 +431,7 @@ class _HomePageState extends State<HomePage> {
                           Text(
                             "Top Products",
                             style: GoogleFonts.inter(
-                              fontSize: 16.sp,
+                              fontSize: 18.sp,
                               fontWeight: FontWeight.w500,
                               color: Color(0xff010311),
                               letterSpacing: -1,
@@ -441,12 +441,12 @@ class _HomePageState extends State<HomePage> {
                           Text(
                             "See All",
                             style: GoogleFonts.inter(
-                              fontSize: 11.sp,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w500,
                               color: Color(0xff211D38),
                             ),
                           ),
-                          Icon(Icons.arrow_forward_ios, size: 15.sp),
+                          Icon(Icons.arrow_forward_ios, size: 20.sp),
                           SizedBox(width: 20.w),
                         ],
                       ),
@@ -1729,7 +1729,7 @@ class ProductBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 210.h,
+      height: 220.h,
       // color: Colors.amber,
       child: ListView.builder(
         itemCount: productList.length,
@@ -1787,18 +1787,18 @@ class ProductBody extends StatelessWidget {
                   //"Canon X4562\n50MP Camera...",
                   productList[index]["name"].toString(),
                   style: GoogleFonts.inter(
-                    fontSize: 13.sp,
+                    fontSize: 15.sp,
                     fontWeight: FontWeight.w500,
                     color: Color(0xff606480),
                     letterSpacing: -1,
                   ),
                 ),
-                SizedBox(height: 8.h),
+                SizedBox(height: 6.h),
                 Text(
                   //"\$150.00",
                   productList[index]['price'].toString(),
                   style: GoogleFonts.inter(
-                    fontSize: 15.sp,
+                    fontSize: 17.sp,
                     fontWeight: FontWeight.w500,
                     color: Color(0xff262833),
                     letterSpacing: -1,
@@ -1845,7 +1845,7 @@ class categoryBody extends StatelessWidget {
             // "All",
             title,
             style: GoogleFonts.inter(
-              fontSize: 12.sp,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w500,
               // color: Color(0xffFFFFFF),
               color: txtColor,
