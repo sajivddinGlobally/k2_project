@@ -1677,7 +1677,7 @@ class _HomePageState extends State<HomePage> {
               color: isSelected
                   ? const Color(0xff4A3DFE)
                   : const Color(0xff606480),
-              size: 26.sp,
+              size: 28.sp,
             ),
             Text(
               label,
@@ -1685,7 +1685,7 @@ class _HomePageState extends State<HomePage> {
                 color: isSelected
                     ? const Color(0xff4A3DFE)
                     : const Color(0xff606480),
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 fontWeight: FontWeight.w500,
               ),
             ),
