@@ -293,7 +293,7 @@ class _ChatPageState extends State<ChatPage> {
                     Text(
                       "K2 Assistant ",
                       style: GoogleFonts.inter(
-                        fontSize: 14.sp,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
                         letterSpacing: -1,
@@ -302,7 +302,7 @@ class _ChatPageState extends State<ChatPage> {
                     Text(
                       "Ask me about payment, orders and products",
                       style: GoogleFonts.inter(
-                        fontSize: 12.sp,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w500,
                         color: Color.fromARGB(255, 201, 197, 255),
                         letterSpacing: -0.6,
@@ -332,14 +332,14 @@ class _ChatPageState extends State<ChatPage> {
             child: Text(
               "Messages",
               style: GoogleFonts.inter(
-                fontSize: 16.sp,
+                fontSize: 18.sp,
                 fontWeight: FontWeight.w500,
                 color: Color(0xff010311),
                 letterSpacing: -0.5,
               ),
             ),
           ),
-          SizedBox(height: 20.h),
+          SizedBox(height: 15.h),
           Expanded(
             child: Padding(
               padding: EdgeInsets.only(left: 15.w, right: 15.w),
@@ -392,7 +392,7 @@ class _ChatPageState extends State<ChatPage> {
                                     //"Adem Electronics",
                                     messageList[index]['name'].toString(),
                                     style: GoogleFonts.inter(
-                                      fontSize: 14.sp,
+                                      fontSize: 16.sp,
                                       fontWeight: FontWeight.w600,
                                       color: Color(0xff010311),
                                       letterSpacing: -0.5,
@@ -402,7 +402,7 @@ class _ChatPageState extends State<ChatPage> {
                                     //"Your Product will arrive soon",
                                     messageList[index]['message'].toString(),
                                     style: GoogleFonts.inter(
-                                      fontSize: 12.sp,
+                                      fontSize: 14.sp,
                                       fontWeight: FontWeight.w500,
                                       color: Color(0xff606480),
                                       letterSpacing: -0.5,
@@ -415,7 +415,7 @@ class _ChatPageState extends State<ChatPage> {
                                 //"45 min ago",
                                 messageList[index]['time'].toString(),
                                 style: GoogleFonts.inter(
-                                  fontSize: 12.sp,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w500,
                                   color: Color(0xff606480),
                                   letterSpacing: -0.5,
