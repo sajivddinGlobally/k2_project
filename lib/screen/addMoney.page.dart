@@ -105,7 +105,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                           child: Text(
                             "Enter Your amount",
                             style: GoogleFonts.inter(
-                              fontSize: 15.sp,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w500,
                               color: const Color(0xff606480),
                               letterSpacing: -0.2,
@@ -143,7 +143,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                       Text(
                         "Select Payment Method",
                         style: GoogleFonts.inter(
-                          fontSize: 16.sp,
+                          fontSize: 18.sp,
                           fontWeight: FontWeight.w500,
                           color: Color(0xff010311),
                           letterSpacing: -0.5,
@@ -163,7 +163,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                             Icon(
                               Icons.payment_outlined,
                               color: Color(0xff606480),
-                              size: 24.sp,
+                              size: 26.sp,
                             ),
                             SizedBox(width: 8.w),
                             Column(
@@ -173,7 +173,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                                 Text(
                                   "Mastercard - XX90",
                                   style: GoogleFonts.inter(
-                                    fontSize: 14.sp,
+                                    fontSize: 16.sp,
                                     fontWeight: FontWeight.w600,
                                     color: Color(0xff010311),
                                   ),
@@ -181,7 +181,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                                 Text(
                                   "Debit Card",
                                   style: GoogleFonts.inter(
-                                    fontSize: 12.sp,
+                                    fontSize: 14.sp,
                                     fontWeight: FontWeight.w500,
                                     color: Color(0xff606480),
                                   ),
@@ -192,7 +192,7 @@ class _AddMoneyPageState extends State<AddMoneyPage> {
                             Icon(
                               Icons.arrow_forward,
                               color: Color(0xff606480),
-                              size: 20.sp,
+                              size: 22.sp,
                             ),
                             SizedBox(width: 15.w),
                           ],
