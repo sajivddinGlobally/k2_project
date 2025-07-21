@@ -143,7 +143,6 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                                 SizedBox(width: 10.w),
-
                                 InkWell(
                                   onTap: () {
                                     Navigator.push(
@@ -1321,7 +1320,7 @@ class _HomePageState extends State<HomePage> {
                                   key: categoryKeys[5], // 👈 Assign key
                                   onTap: () {
                                     setState(() {
-                                      tab = 4;
+                                      tab = 5;
                                     });
                                     WidgetsBinding.instance
                                         .addPostFrameCallback(
