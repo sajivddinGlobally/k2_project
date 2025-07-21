@@ -108,7 +108,7 @@ class _ChatingPageState extends State<ChatingPage> {
                         Text(
                           "Adem Electronics",
                           style: GoogleFonts.inter(
-                            fontSize: 14.sp,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w600,
                             color: Color(0xff010311),
                             letterSpacing: -0.5,
@@ -117,7 +117,7 @@ class _ChatingPageState extends State<ChatingPage> {
                         Text(
                           "Online",
                           style: GoogleFonts.inter(
-                            fontSize: 12.sp,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w500,
                             color: Color(0xff2FAF0F),
                           ),
@@ -283,7 +283,7 @@ class ChatBubble extends StatelessWidget {
         child: Text(
           message,
           style: GoogleFonts.roboto(
-            fontSize: 16.sp,
+            fontSize: 17.sp,
             fontWeight: FontWeight.w400,
             color: isSender ? Colors.white : Color(0xFF2B2B2B),
             letterSpacing: -0.5,
