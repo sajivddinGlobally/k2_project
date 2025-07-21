@@ -86,7 +86,7 @@ class _WalletPageState extends State<WalletPage> {
                           child: Text(
                             "Your wallet Balance",
                             style: GoogleFonts.inter(
-                              fontSize: 13.sp,
+                              fontSize: 15.sp,
                               fontWeight: FontWeight.w600,
                               color: Color.fromARGB(178, 255, 255, 255),
                             ),
@@ -378,7 +378,7 @@ class _WalletPageState extends State<WalletPage> {
                                     Text(
                                       users[index]['name'].toString(),
                                       style: GoogleFonts.inter(
-                                        fontSize: 12.sp,
+                                        fontSize: 14.sp,
                                         fontWeight: FontWeight.w500,
                                         color: Color(0xff1E1E1E),
                                       ),
@@ -408,7 +408,7 @@ class _WalletPageState extends State<WalletPage> {
                                     Text(
                                       'Add',
                                       style: GoogleFonts.inter(
-                                        fontSize: 12.sp,
+                                        fontSize: 14.sp,
                                         fontWeight: FontWeight.w500,
                                         color: Color(0xff1E1E1E),
                                       ),
@@ -441,7 +441,7 @@ class _WalletPageState extends State<WalletPage> {
                           Text(
                             "Recent transactions",
                             style: GoogleFonts.inter(
-                              fontSize: 16.sp,
+                              fontSize: 18.sp,
                               fontWeight: FontWeight.w500,
                               color: Color(0xff010311),
                               letterSpacing: -0.5,
@@ -544,7 +544,7 @@ class TransactionHistory extends StatelessWidget {
               Text(
                 name,
                 style: GoogleFonts.inter(
-                  fontSize: 14.sp,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                   color: Color(0xff010311),
                   letterSpacing: -0.5,
@@ -553,7 +553,7 @@ class TransactionHistory extends StatelessWidget {
               Text(
                 date,
                 style: GoogleFonts.inter(
-                  fontSize: 12.sp,
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
                   color: Color(0xff606480),
                   letterSpacing: -0.3,
@@ -569,7 +569,7 @@ class TransactionHistory extends StatelessWidget {
               Text(
                 amount,
                 style: GoogleFonts.inter(
-                  fontSize: 14.sp,
+                  fontSize: 18.sp,
                   fontWeight: FontWeight.w500,
                   color: amount.contains("-")
                       ? Color(0xffAF0F0F)
@@ -580,7 +580,7 @@ class TransactionHistory extends StatelessWidget {
               Text(
                 dedicate,
                 style: GoogleFonts.inter(
-                  fontSize: 12.sp,
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
                   color: Color(0xff606480),
                   letterSpacing: -0.3,
